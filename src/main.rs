@@ -12,7 +12,7 @@ use quicli::prelude::*;
 struct Cli {
     #[structopt(subcommand)] // Note that we mark a field as a subcommand
     cmd: Command,
-    /// 📝  log all the things!
+    /// Log all the things!
     #[structopt(long = "verbose", short = "v", parse(from_occurrences))]
     verbosity: u8,
 }
@@ -20,13 +20,13 @@ struct Cli {
 #[derive(Debug, StructOpt)]
 enum Command {
     #[structopt(name = "init")]
-    /// 🐣  initialize a package.json based on your compiled wasm
+    /// Initialize a package.json based on your compiled wasm
     Init { path: Option<String> },
     #[structopt(name = "pack")]
-    /// 🍱  create a tar of your npm package but don't publish! [NOT IMPLEMENTED]
+    /// Create a tar of your npm package but don't publish! [NOT IMPLEMENTED]
     Pack {},
     #[structopt(name = "publish")]
-    /// 🎆  pack up your npm package and publish! [NOT IMPLEMENTED]
+    /// Pack up your npm package and publish! [NOT IMPLEMENTED]
     Publish {},
 }
 
